@@ -6,7 +6,8 @@ const game = require('./controllers/gamecontroller')
 
 const PORT = 4000;
 
-app.use(require('body-parser').json());
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 app.use('/api/auth', user);
 app.use(require('./middleware/validate-session'))
 app.use('/api/game', game);
