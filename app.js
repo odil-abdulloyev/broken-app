@@ -7,15 +7,15 @@ const game = require('./controllers/gamecontroller')
 const PORT = 4000;
 
 app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
+app.use(express.urlencoded({extended: true}));
 app.use('/api/auth', user);
 app.use(require('./middleware/validate-session'))
 app.use('/api/game', game);
 
 db.sync().then(() => {
-    app.listen(PORT,function() {
-        console.log(`App is listening on port ${PORT}`);
-    });
+  app.listen(PORT, function () {
+    console.log(`App is listening on port ${PORT}`);
+  });
 }).catch((err) => {
-    console.log(err.message);
+  console.log(err.message);
 });
