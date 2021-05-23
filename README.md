@@ -37,6 +37,7 @@
 ### 3. Create game
 #### Method: `POST`
 #### URL: `localhost:4000/api/game/create`
+#### Headers: `Authorization: <token>`
 #### Body:
 ```json
 {
